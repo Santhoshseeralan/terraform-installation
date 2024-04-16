@@ -1,0 +1,47 @@
+Sure, here are the steps to install Terraform on Ubuntu:
+
+1. **Update Package Index:**
+   
+   First, ensure your package index is up-to-date:
+   ```bash
+   sudo apt update
+   ```
+
+2. **Install Required Dependencies:**
+
+   Install the necessary packages which will be required to download and install Terraform:
+   ```bash
+   sudo apt install -y curl unzip
+   ```
+
+3. **Download Terraform:**
+
+   Use `curl` to download the Terraform binary. You can check the latest version from the [Terraform website](https://www.terraform.io/downloads.html):
+   ```bash
+   export TF_VERSION="0.15.5"  # Replace with the latest version
+   curl -LO https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
+   ```
+
+4. **Extract the Downloaded Archive:**
+
+   ```bash
+   unzip terraform_${TF_VERSION}_linux_amd64.zip
+   ```
+
+5. **Move Terraform Binary:**
+
+   Move the extracted binary to a directory included in your system's PATH to make it executable system-wide. `/usr/local/bin` is a common choice:
+   ```bash
+   sudo mv terraform /usr/local/bin/
+   ```
+
+6. **Verify Installation:**
+
+   Verify that Terraform is installed correctly by checking its version:
+   ```bash
+   terraform version
+   ```
+
+   You should see the installed Terraform version printed to the console.
+
+Now you have successfully installed Terraform on your Ubuntu system. You can start using it to manage your infrastructure as code.
